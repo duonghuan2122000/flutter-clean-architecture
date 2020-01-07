@@ -20,6 +20,27 @@ dependencies:
   flutter:
     sdk: flutter
 
+  # Dịch vụ truy cập vị trí.
+  get_it: ^2.0.1
+
+  # Bloc cho quản lý state.
+  flutter_bloc: ^0.21.0
+
+  # Thêm operator == and hashCode cho class.
+  equatable: ^0.4.0
+
+  # Thư viện hỗ trợ chứa năng chương trình của dart.
+  dartz: ^0.8.6
+
+  # Thư viện kiểm tra kết nối mạng (wifi, dữ liệu)
+  connectivity: ^0.4.3+7
+
+  # Thư viện gọi Api.
+  http: ^0.12.0+2
+
+  # Thư viện lưu trữ bộ nhớ đệm.
+  shared_preferences: ^0.5.3+4
+
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
@@ -27,6 +48,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  mockito: ^4.1.0
 
 
 # For information on the generic Dart part of this file, see the

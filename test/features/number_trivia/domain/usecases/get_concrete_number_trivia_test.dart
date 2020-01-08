@@ -5,11 +5,21 @@ import 'package:dartz/dartz.dart';
 import 'package:mockito/mockito.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+/**
+ * * Test lấy số trivia theo tham số truyền vào hoặc ngẫu nhiên
+ */
+
+/**
+ * * Lớp MockNumberTriviaRepository kế thừa Mock (Mockity: pub.dev) và implements (tiến hành thực thi) NumberTriviaRepository
+ */
 class MockNumberTriviaRepository extends Mock
   implements NumberTriviaRepository{
 
 }
 
+/**
+ * * Hàm chạy thử (test)
+ */
 void main(){
   GetConcreteNumberTrivia usecase;
   MockNumberTriviaRepository mockNumberTriviaRepository;

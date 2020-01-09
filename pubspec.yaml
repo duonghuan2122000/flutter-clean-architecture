@@ -33,7 +33,7 @@ dependencies:
   dartz: ^0.8.6
 
   # Thư viện kiểm tra kết nối mạng (wifi, dữ liệu)
-  connectivity: ^0.4.3+7
+  data_connection_checker: ^0.3.4
 
   # Thư viện gọi Api.
   http: ^0.12.0+2

@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-abstract class Failure extends Equatable{
+abstract class Failure extends Equatable {
   /**
    * * Lớp trừu tượng Failure xử lý lỗi 
    * * Kế thừa class Equatable
@@ -9,6 +9,9 @@ abstract class Failure extends Equatable{
    * * Gọi hàm khởi tạo lớp cha truyền tham số vào là một collections.
    */
 
-  Failure([List propeties = const<dynamic>[]]) :
-      super(propeties);
+  Failure([List propeties = const <dynamic>[]]) : super(propeties);
 }
+
+class ServerFailure extends Failure {}
+
+class CacheFailure extends Failure {}

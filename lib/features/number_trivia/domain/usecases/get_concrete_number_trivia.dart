@@ -10,6 +10,7 @@ import '../repositories/number_trivia_repository.dart';
 class GetConcreteNumberTrivia implements UseCase<NumberTrivia, Params> {
   /**
    * * Lớp GetConcreteNumberTrivia
+   * * implements UseCase<Type, Params>
    * * Lớp có một phương thức là repostiory kiểu là NumberTriviaRepository
    */
   final NumberTriviaRepository repository;
@@ -31,8 +32,18 @@ class GetConcreteNumberTrivia implements UseCase<NumberTrivia, Params> {
 }
 
 class Params extends Equatable{
+  /**
+   * * Class Params kế thừa Equatable
+   */
+
+  /**
+   * * Thuộc tính: int number
+   */
   final int number;
 
+  /**
+   * * Hàm khởi tạo
+   */
   Params({
     @required this.number
   }) : super([number]);

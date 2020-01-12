@@ -19,8 +19,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  injector: ^1.0.8
 
-  # Dịch vụ truy cập vị trí.
+  # Thư viện injection (tương tự như pass data).
   get_it: ^2.0.1
 
   # Bloc cho quản lý state.

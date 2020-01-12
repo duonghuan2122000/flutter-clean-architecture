@@ -21,12 +21,9 @@ class NumberTriviaBloc extends Bloc<NumberTriviaEvent, NumberTriviaState> {
   final InputConverter inputConverter;
 
   NumberTriviaBloc(
-      {@required concrete, @required random, @required this.inputConverter})
-      : assert(concrete != null),
-        assert(random != null),
-        assert(inputConverter != null),
-        this.getConcreteNumberTrivia = concrete,
-        this.getRandomNumberTrivia = random;
+      {@required this.getConcreteNumberTrivia,
+      @required this.getRandomNumberTrivia,
+      @required this.inputConverter});
   @override
   NumberTriviaState get initialState => Empty();
 
@@ -46,23 +43,22 @@ class NumberTriviaBloc extends Bloc<NumberTriviaEvent, NumberTriviaState> {
             await getConcreteNumberTrivia(Params(number: integer));
         yield* _eitherLoadedOrErrorState(failureOrTrivia);
       });
-    } else if(event is GetTriviaForRandomNumber){
+    } else if (event is GetTriviaForRandomNumber) {
       yield Loading();
-        final failureOrTrivia =
-            await getRandomNumberTrivia(NoParams());
-        yield* _eitherLoadedOrErrorState(failureOrTrivia);
+      final failureOrTrivia = await getRandomNumberTrivia(NoParams());
+      yield* _eitherLoadedOrErrorState(failureOrTrivia);
     }
   }
 
-  Stream<NumberTriviaState> _eitherLoadedOrErrorState(Either<Failure, NumberTrivia> failureOrTrivia) async*{
+  Stream<NumberTriviaState> _eitherLoadedOrErrorState(
+      Either<Failure, NumberTrivia> failureOrTrivia) async* {
     yield failureOrTrivia.fold(
-            (failure) => Error(
-                message: _mapFailureToMessage(failure)),
-            (trivia) => Loaded(trivia: trivia));
+        (failure) => Error(message: _mapFailureToMessage(failure)),
+        (trivia) => Loaded(trivia: trivia));
   }
 
-  String _mapFailureToMessage(Failure failure){
-    switch(failure.runtimeType){
+  String _mapFailureToMessage(Failure failure) {
+    switch (failure.runtimeType) {
       case ServerFailure:
         return SERVER_FAILURE_MESSAGE;
       case CacheFailure:
